@@ -3,5 +3,4 @@
 -  Santiago Medrano Poveda.
 - Julian Pulido Aguirre.
 - Sofia Arias Novoa
-## Documentacion
-# Funcionamiento Sumador de 4 Bits
+## Documentaciones Laboratorios y otros.
