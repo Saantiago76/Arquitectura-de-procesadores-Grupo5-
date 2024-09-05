@@ -5,9 +5,11 @@
 - Sofia Arias Novoa
 ## Documentacion
 # Funcionamiento Sumador de 1 Bit
+# Resumen
+En Arquitectura de procesadores, los sumadores de 1 bit son componentes fundamentales para operaciones aritméticas más complejas, como la adición de números de múltiples bits. Entonces en este laboratorio realizamos distintos tipos de sumadores de 1 bit implementados en este laboratorio del primer corte 
 # Sumador sum1b.v
 
-Este proyecto contiene un módulo Verilog que implementa un **sumador completo de 1 bit** con acarreo . Este sumador realiza la suma de dos bits (`A` y `B`) junto con un bit de acarreo de entrada (`Ci`), generando como salida el resultado de la suma (`So`) y el acarreo de salida (`Co`).
+En este laboratorio realizamos el **sumador completo de 1 bit** con acarreo . Este sumador realiza la suma de dos bits (`A` y `B`) junto con un bit de acarreo de entrada (`Ci`), generando como salida el resultado de la suma (`So`) y el acarreo de salida (`Co`).
 
 ## Descripción del Módulo `sum1b`
 
