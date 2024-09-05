@@ -1,4 +1,6 @@
 # Arquitectura de procesadores Grupo5  
+# Profesora
+- Diana Natali Maldonado
 # Integrantes:
 -  Santiago Medrano Poveda.
 - Julian Pulido Aguirre.
