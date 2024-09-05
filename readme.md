@@ -52,8 +52,3 @@ module sum1b(
     end
 
 endmodule
-dasdasdasda
-dsadasd
-2
-3
-4
