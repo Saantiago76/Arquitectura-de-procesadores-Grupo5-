@@ -103,4 +103,41 @@ module sum1b_primitive (
     or (Co, cout_t, a_ab);
 endmodule
 ```
-# Simulacion
+# Tabla de Verdad para comprobar del Sumador de 1 Bit
+
+Esta tabla muestra como es el funcionamiento de un **sumador de 1 bit** , que toma dos bits de entrada (`A` y `B`), junto con un acarreo de entrada (`Ci`), y genera una suma (`So`) y un acarreo de salida (`Co`) como fue explicado en el laboratorio en clase.
+
+## Tabla de Verdad
+
+La siguiente es la **tabla de verdad** para el sumador de 1 |bit:
+```
+|  A  |  B  | Ci  | Co  | So  |
+| --- | --- | --- | --- | --- |
+|  0  |  0  |  0  |  0  |  0  |
+|  0  |  0  |  1  |  0  |  1  |
+|  0  |  1  |  0  |  0  |  1  |
+|  0  |  1  |  1  |  1  |  0  |
+|  1  |  0  |  0  |  0  |  1  |
+|  1  |  0  |  1  |  1  |  0  |
+|  1  |  1  |  0  |  1  |  0  |
+|  1  |  1  |  1  |  1  |  1  |
+```
+### Explicación:
+
+- **Entradas**:
+  - **A**: Primer bit de entrada.
+  - **B**: Segundo bit de entrada.
+  - **Ci**: Acarreo de entrada.
+
+- **Salidas**:
+  - **So**: Suma de los bits de entrada.
+  - **Co**: Acarreo de salida.
+
+#### Ejemplos:
+1. **Cuando `A = 0`, `B = 1`, y `Ci = 0`**:
+   - La salida es **`So = 1`** y **`Co = 0`**.
+   
+2. **Cuando `A = 1`, `B = 1`, y `Ci = 1`**:
+   - La salida es **`So = 1`** y **`Co = 1`** (la suma total es 3, que en binario es `11`).
+
+Con esta **tabla de verdad** podemos verificar su funcionamiento de el **sumador completo** de 1 bit funcione correctamente. mostrando las combinaciones posibles con ejemplos (`A`, `B`, `Ci`), y los resultados obtenidos (sumas y acarreo) deben coincidir con los valores de **So** y **Co** en la tabla.
