@@ -5,11 +5,13 @@
 - Sofia Arias Novoa
 ## Documentacion
 # Funcionamiento Sumador de 4 Bits
+# Resumen
+Los sumadores de 4 bits son componentes esenciales en el diseño de circuitos aritméticos digitales y mas en nuestro uso cotidiano como ingenieros que nos permiten realizar la suma de dos números binarios de 4 bits y manejar el acarreo resultante cual explicado en la clase. Entonces en este laboratorio detallamos los codigos proporcionados por la docente su tabla de verdad y simulacion del sumador de 4 bits y su testbench:
 # Sumador de 4 Bits usando Sumadores de 1 Bit
 
-Este proyecto contiene un módulo Verilog llamado `LABSUM1` que implementa un **sumador de 4 bits** utilizando instancias de sumadores de 1 bit (`sum1b`). El diseño es jerárquico, reutilizando el módulo `sum1b` para realizar la suma bit a bit, y propagando los acarreo intermedios entre cada etapa del sumador.
+Este laboratorio contiene un módulo Verilog llamado `Sum4b` que implementa un **sumador de 4 bits** utilizando instancias de sumadores de 1 bit (`sum1b`) **vistos anteriormente en los sumadores de 1 bit**. El diseño es jerárquico, reutilizando el módulo `sum1b` para realizar la suma bit a bit, y propagando los acarreo intermedios entre cada etapa del sumador.
 
-## Descripción del Módulo `LABSUM1`
+## Descripción del Módulo `Sum4b`
 
 El módulo tiene las siguientes entradas y salidas:
 
@@ -52,3 +54,67 @@ module LABSUM1(
     sum1b s3 (.A(A[3]), .B(B[3]), .Ci(c3), .Co(Cout), .So(So[3]));
 
 endmodule
+```
+# Descripción del Sumador de 4 Bits (`sum4b_tb`)
+
+Este archivo de testbench (`sum4b_tb.v`) está diseñado para verificar el correcto funcionamiento de un **sumador de 4 bits** (`sum4b`), simulando diferentes combinaciones de entradas y observando las salidas.
+
+## Entradas y Salidas
+- **Entradas**:
+  - `A_tb`: Registro de 4 bits que representa el primer número a sumar.
+  - `B_tb`: Registro de 4 bits que representa el segundo número a sumar.
+  
+- **Salidas**:
+  - `So_tb`: Cable de 4 bits que contiene el resultado de la suma.
+  - `Co_tb`: Cable que contiene el acarreo de salida (si la suma de los 4 bits desborda).
+
+## Descripción del Proceso
+
+1. **Inicialización de A y B**:
+   - El registro `A_tb` se inicializa en **0**.
+   - El ciclo `for` incrementa el valor de `B_tb` desde 0 hasta 14 para realizar pruebas con diferentes combinaciones de `A_tb` y `B_tb`.
+   - Cada vez que `B_tb` vuelve a 0, el valor de `A_tb` se incrementa en 1, lo que permite probar diferentes combinaciones de entrada para ambos números.
+
+2. **Simulación Temporal**:
+   - Después de cada iteración, se espera un lapso de **5 unidades de tiempo** antes de mostrar el resultado en la consola.
+   - La función `$display` imprime en la consola los valores actuales de `A_tb`, `B_tb` y la salida `So_tb`, lo que te permite verificar que el sumador de 4 bits está funcionando como se espera.
+
+3. **Terminación de la Simulación**:
+   - Cuando el ciclo ha probado todas las combinaciones, la simulación termina con `$finish`.
+
+4. **Volcado de Resultados**:
+   - Se utiliza `$dumpfile` y `$dumpvars` para generar un archivo `VCD` (cambio de valores de señales) que puedes abrir en un visor como **GTKWave**. Esto permite analizar gráficamente el comportamiento del sumador a lo largo del tiempo.
+
+# Tabla de Verdad para comprobar del Sumador de 4 Bit
+
+Dado que cada entrada es un número de 4 bits (A y B), la tabla muestra los resultados para algunos casos representativos. El sumador también produce un acarreo de salida (Co).
+
+Definiciones:
+A[3:0]: Primer número de 4 bits.
+B[3:0]: Segundo número de 4 bits.
+So[3:0]: Resultado de la suma de A y B.
+Co: Acarreo de salida.
+| A[3:0] | B[3:0] | Co | So[3:0] |
+|--------|--------|----|---------|
+| 0000   | 0000   | 0  | 0000    |
+| 0000   | 0001   | 0  | 0001    |
+| 0001   | 0001   | 0  | 0010    |
+| 0001   | 0010   | 0  | 0011    |
+| 0001   | 0011   | 0  | 0100    |
+| 0010   | 0010   | 0  | 0100    |
+| 0010   | 0100   | 0  | 0110    |
+| 0011   | 0011   | 0  | 0110    |
+| 0111   | 0001   | 0  | 1000    |
+| 0111   | 0010   | 0  | 1001    |
+| 0111   | 0111   | 1  | 1110    |
+| 1111   | 1111   | 1  | 1110    |
+| 1111   | 0001   | 1  | 0000    |
+
+
+#### - A[3:0] y B[3:0] son números binarios de 4 bits.
+#### - So[3:0] es el resultado de sumar A y B en binario, con 4 bits de ancho.
+#### - Co es el acarreo de salida, que se produce cuando la suma de los dos números de 4 bits y el acarreo de entrada excede el rango de 4 bits (es decir, cuando el resultado es mayor que 1111 en binario).
+
+###  La tabla de verdad proporciona una representación de cómo debería comportarse el sumador de 4 bits para varias combinaciones de entrada. Nosotros hacemos este ejemplo ya qie nos muestra y verifica el funcionamiento del sumador.
+
+# Simulacion
