@@ -24,7 +24,7 @@ El módulo tiene tres entradas y dos salidas:
 
 ### Funcionamiento
 
-Este módulo se comporta como un **sumador completo**, lo que significa que toma dos bits (`A` y `B`) y un acarreo de entrada (`Ci`), y produce una suma (`So`) y un acarreo de salida (`Co`).
+En este laboratorio realizamos un **sumador completo**, lo que significa que toma dos bits (`A` y `B`) y un acarreo de entrada (`Ci`), y produce una suma (`So`) y un acarreo de salida (`Co`) justo como lo explicado en clase.
 
 Internamente, se utiliza un registro de 2 bits para almacenar el resultado de la suma:
 
@@ -54,7 +54,7 @@ endmodule
 ```
 # Sumador sum1b_primitive
 
-Este proyecto contiene un módulo Verilog que implementa un **sumador completo de 1 bit** usando primitivas lógicas básicas como AND, XOR y OR. El sumador toma dos bits de entrada (`A` y `B`) junto con un bit de acarreo de entrada (`Ci`) y produce una suma (`So`) y un acarreo de salida (`Co`).
+En este segundo codigo proporcionado por la docente es otra forma de realizar un **sumador completo de 1 bit** usando primitivas lógicas básicas como AND, XOR y OR. El sumador toma dos bits de entrada (`A` y `B`) junto con un bit de acarreo de entrada (`Ci`) y produce una suma (`So`) y un acarreo de salida (`Co`).
 
 ## Descripción del Módulo `sum1b_primitive`
 
@@ -141,3 +141,5 @@ La siguiente es la **tabla de verdad** para el sumador de 1 |bit:
    - La salida es **`So = 1`** y **`Co = 1`** (la suma total es 3, que en binario es `11`).
 
 Con esta **tabla de verdad** podemos verificar su funcionamiento de el **sumador completo** de 1 bit funcione correctamente. mostrando las combinaciones posibles con ejemplos (`A`, `B`, `Ci`), y los resultados obtenidos (sumas y acarreo) deben coincidir con los valores de **So** y **Co** en la tabla.
+
+# Simulacion
