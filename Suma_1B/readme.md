@@ -101,5 +101,5 @@ module sum1b_primitive (
     and(cout_t, x_ab, Ci);
   
     or (Co, cout_t, a_ab);
-  
 endmodule
+```
