@@ -84,7 +84,45 @@ Este archivo de testbench (`sum4b_tb.v`) está diseñado para verificar el corre
 
 4. **Volcado de Resultados**:
    - Se utiliza `$dumpfile` y `$dumpvars` para generar un archivo `VCD` (cambio de valores de señales) que puedes abrir en un visor como **GTKWave**. Esto permite analizar gráficamente el comportamiento del sumador a lo largo del tiempo.
+### Codigo Verilog
+```
+//include "sum4b.v"
+//timescale 1ns/1ns
 
+module sum4b_tb();
+
+    reg [3:0] A_tb;
+    reg [3:0] B_tb;
+  
+    wire Co_tb;
+    wire [3:0] So_tb;
+  
+    // Instantiate the Unit Under Test (UUT)
+    sum4b uut (
+      .A(A_tb), 
+      .B( B_tb), 
+      .Co(Co_tb), 
+      .So(So_tb)
+    );
+  
+  initial begin
+    A_tb=0;
+    for ( B_tb = 0;  B_tb < 15;  B_tb =  B_tb + 1) begin
+      if ( B_tb==0) begin
+        A_tb=A_tb+1;
+      end
+      #5 $display("el valor de %d + %d = %d", A_tb, B_tb,So_tb);
+    end
+    $finish;
+  end      
+
+  initial begin: TEST_CASE
+		$dumpfile("sum4b_tb.vcd");
+		$dumpvars(-1, uut);
+	end
+  
+  endmodule
+  ```
 # Tabla de Verdad para comprobar del Sumador de 4 Bit
 
 Dado que cada entrada es un número de 4 bits (A y B), la tabla muestra los resultados para algunos casos representativos. El sumador también produce un acarreo de salida (Co).
@@ -118,3 +156,6 @@ Co: Acarreo de salida.
 ###  La tabla de verdad proporciona una representación de cómo debería comportarse el sumador de 4 bits para varias combinaciones de entrada. Nosotros hacemos este ejemplo ya qie nos muestra y verifica el funcionamiento del sumador.
 
 # Simulacion
+
+# Conclusion 
+Los sumadores de 4 bits nos permiten sumar números binarios de hasta 4 bits de manera eficiente, propagan los acarreos de bit a bit, y gestionan el acarreo final. El testbench correspondiente asegura que el sumador funciona correctamente mediante pruebas sistemáticas y proporciona una herramienta para la validación visual de la simulación.
