@@ -103,3 +103,4 @@ module sum1b_primitive (
     or (Co, cout_t, a_ab);
 endmodule
 ```
+# Simulacion
