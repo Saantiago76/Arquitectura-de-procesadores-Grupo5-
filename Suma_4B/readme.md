@@ -20,7 +20,7 @@ El módulo tiene las siguientes entradas y salidas:
 - `B[3:0]`: Un número de 4 bits que representa el segundo operando.
 
 ### Salidas
-- `So[3:0]`: La suma de los dos números de 4 bits (`A` y `B`).
+- `Sum[3:0]`: La suma de los dos números de 4 bits (`A` y `B`).
 - `Cout`: El acarreo de salida del bit más significativo.
 
 ### Funcionamiento
