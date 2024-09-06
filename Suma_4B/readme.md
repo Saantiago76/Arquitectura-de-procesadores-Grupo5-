@@ -84,7 +84,7 @@ Este archivo de testbench (`sum4b_tb.v`) está diseñado para verificar el corre
 
 4. **Volcado de Resultados**:
    - Se utiliza `$dumpfile` y `$dumpvars` para generar un archivo `VCD` (cambio de valores de señales) que puedes abrir en un visor como **GTKWave**. Esto permite analizar gráficamente el comportamiento del sumador a lo largo del tiempo.
-### Codigo Verilog
+### Código Verilog
 ```
 //include "sum4b.v"
 //timescale 1ns/1ns
@@ -153,9 +153,28 @@ Co: Acarreo de salida.
 #### - So[3:0] es el resultado de sumar A y B en binario, con 4 bits de ancho.
 #### - Co es el acarreo de salida, que se produce cuando la suma de los dos números de 4 bits y el acarreo de entrada excede el rango de 4 bits (es decir, cuando el resultado es mayor que 1111 en binario).
 
-###  La tabla de verdad proporciona una representación de cómo debería comportarse el sumador de 4 bits para varias combinaciones de entrada. Nosotros hacemos este ejemplo ya qie nos muestra y verifica el funcionamiento del sumador.
+###  La tabla de verdad proporciona una representación de cómo debería comportarse el sumador de 4 bits para varias combinaciones de entrada. Nosotros hacemos este ejemplo ya que nos muestra y verifica el funcionamiento del sumador.
 
-# Simulacion
+# Simulación
+Esta simulación, que realizamos con el simulador que viene configurado por defecto en el instalador de **Quartus**, muestra el sumador de 4 bits, donde se están sumando dos números binarios de 4 bits, representados por las entradas A y B, junto con las salidas Sum (resultado de la suma) y Cout (carry-out).
 
-# Conclusion 
+![alt text](<Imagen de WhatsApp 2024-09-05 a las 17.30.34_e8c61f82.jpg>)
+
+### Detalles de la simulación:
+1. **Entradas**:
+- *A:* La entrada de 4 bits, que cambia su valor en intervalos de tiempo. Por ejemplo, en los primeros 80 ns, el valor de A es `0111` (7 en decimal), luego cambia a 1110 (14 en decimal), y así sucesivamente.
+
+- *B:* La segunda entrada de 4 bits, que también cambia a diferentes valores durante la simulación. Por ejemplo, comienza en `1110` (14 en decimal), luego pasa a 1011 (11 en decimal), etc.
+
+2. **Salidas:**
+
+- *Sum:* Es la salida que representa el resultado de la suma de las entradas A y B. Por ejemplo, cuando A es `0111` y B es `1110`, la salida Sum es `0101`, lo que corresponde a 21 en decimal (7 + 14 = 21). La salida aquí solo muestra los 4 bits menos significativos del resultado.
+
+- *Cout:* Es el carry-out, que indica si hubo un acarreo más allá de los 4 bits. En esta simulación, se muestra que Cout es 1 cuando se genera un acarreo. Esto ocurre, por ejemplo, cuando la suma de A y B excede los 4 bits (por ejemplo, cuando se suma 7 y 14, cuyo resultado es 21, y Cout se activa para reflejar el acarreo).
+
+### Análisis temporal:
+En los primeros 80 ns, cuando `A = 0111 y B = 1110`, el resultado de la suma es `10101`. El bit menos significativo es almacenado en Sum (0101), y el bit más significativo de la suma (carry) se refleja en Cout, que es 1.
+En los siguientes intervalos, la simulación sigue cambiando los valores de A y B, mostrando cómo varían Sum y Cout en función de las combinaciones.
+
+# Conclusión 
 Los sumadores de 4 bits nos permiten sumar números binarios de hasta 4 bits de manera eficiente, propagan los acarreos de bit a bit, y gestionan el acarreo final. El testbench correspondiente asegura que el sumador funciona correctamente mediante pruebas sistemáticas y proporciona una herramienta para la validación visual de la simulación.
