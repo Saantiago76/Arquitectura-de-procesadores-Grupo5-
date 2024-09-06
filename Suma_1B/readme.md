@@ -160,7 +160,17 @@ El carry-out (Co) también se ajusta según los valores de las entradas y el res
 
 De esta forma nos damos cuenta que:
 
-Cuando `A = 1, B = 0, y Ci = 1`, el resultado de la suma sería 10 en binario (donde la suma es 0 y el carry-out es 1), lo cual parece coincidir con los valores mostrados para Sum y Co en ese instante.
+Cuando `A = 1, B = 0, y Ci = 1`, el resultado de la suma sería `10` en binario (donde la suma es 0 y el carry-out es 1), lo cual parece coincidir con los valores mostrados para Sum y Co en ese instante.
+
+## suma1b_primitive
+
+Para este caso en cuestión, realizamos la simulación de la misma forma que en el ejemplo anterior, esto con el fin de comprobar que para un fin en específico como lo es un **sumador completo** tenemos varias alternativas de código que nos permitirán llegar al mismo resultado. Esta vez, utilizando primitivas lógicas.
+
+![alt text](<Imagen de WhatsApp 2024-09-05 a las 17.56.50_5ea279b3.jpg>)
+
+Como se puede observar, contamos con la misma cantidad de netradas y salidas, pues la única diferencia es la forma de codificación. 
+
+Esta vez, se realizó una simulación en la que se obtuviera una variable aleatoria en la entrada cada 50 milisegundos, de modo que nuestras salidas **S** y **Cout** responden al cambio en cada intervalo de tiempo, demostrando también, la tabla de verdad presentada.
 
 # Conclusión
 Los sumadores de 1 bit son bloques esenciales en el diseño de circuitos aritméticos más complejos, como sumadores de n bits. Mientras que el sumador básico realiza la adición directa, la versión con primitivas ofrece una representación detallada del proceso de suma, descomponiendo las operaciones en lógica combinacional. Entonces cada uno se detalla en un enfoque especifico y uno varia segun la necesidad. 
