@@ -144,14 +144,25 @@ La siguiente es la **tabla de verdad** para el sumador de 1 |bit:
 
 Con esta **tabla de verdad** podemos verificar su funcionamiento de el **sumador completo** de 1 bit funcione correctamente. mostrando las combinaciones posibles con ejemplos (`A`, `B`, `Ci`), y los resultados obtenidos (sumas y acarreo) deben coincidir con los valores de **So** y **Co** en la tabla.
 
-# Simulacion
-Para el proceso de realizar la simulación hemos decicido utilizar el simulador que viene configurado por defecto en la instalación de **Quartus**
+# Simulación
+Para el proceso de realizar la simulación hemos decicido utilizar el simulador que viene configurado por defecto en la instalación de **Quartus**.
+
+Creamos un archivo de verificación denominado **University Program VWF** y configuramos nuestras entradas y salidas; para ello, a la entrada modificamos los valores para obtener un valor aleatorio cada 75 milisegundos y según el número dado, se genera la operación de la suma.
+
+A continuación se evidencia la simulación realizada:
 
 ![alt text](<Imagen de WhatsApp 2024-09-05 a las 17.46.38_53867ea8.jpg>)
 
-hi
+### Análisis temporal:
 
-# Conclusion
+La simulación muestra cómo las entradas A, B, y Ci varían con el tiempo. Cada intervalo de tiempo está marcado, y se observa que el valor de salida Sum cambia en función de los valores de entrada.
+El carry-out (Co) también se ajusta según los valores de las entradas y el resultado de la suma, tal y como se planteó anteriormente en la tabla de verdad.
+
+De esta forma nos damos cuenta que:
+
+Cuando `A = 1, B = 0, y Ci = 1`, el resultado de la suma sería 10 en binario (donde la suma es 0 y el carry-out es 1), lo cual parece coincidir con los valores mostrados para Sum y Co en ese instante.
+
+# Conclusión
 Los sumadores de 1 bit son bloques esenciales en el diseño de circuitos aritméticos más complejos, como sumadores de n bits. Mientras que el sumador básico realiza la adición directa, la versión con primitivas ofrece una representación detallada del proceso de suma, descomponiendo las operaciones en lógica combinacional. Entonces cada uno se detalla en un enfoque especifico y uno varia segun la necesidad. 
 
 
