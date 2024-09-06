@@ -145,6 +145,11 @@ La siguiente es la **tabla de verdad** para el sumador de 1 |bit:
 Con esta **tabla de verdad** podemos verificar su funcionamiento de el **sumador completo** de 1 bit funcione correctamente. mostrando las combinaciones posibles con ejemplos (`A`, `B`, `Ci`), y los resultados obtenidos (sumas y acarreo) deben coincidir con los valores de **So** y **Co** en la tabla.
 
 # Simulacion
+Para el proceso de realizar la simulación hemos decicido utilizar el simulador que viene configurado por defecto en la instalación de **Quartus**
+
+![alt text](<Imagen de WhatsApp 2024-09-05 a las 17.46.38_53867ea8.jpg>)
+
+hi
 
 # Conclusion
 Los sumadores de 1 bit son bloques esenciales en el diseño de circuitos aritméticos más complejos, como sumadores de n bits. Mientras que el sumador básico realiza la adición directa, la versión con primitivas ofrece una representación detallada del proceso de suma, descomponiendo las operaciones en lógica combinacional. Entonces cada uno se detalla en un enfoque especifico y uno varia segun la necesidad. 
